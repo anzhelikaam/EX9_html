@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Робота з фоном</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            height: 300px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            
+            /* Багатошаровий фон */
+            background: 
+                /* Напівпрозорий градієнт зверху */
+                linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%),
+                /* Патерн з діагональних ліній */
+                repeating-linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1) 5px, transparent 5px, transparent 10px),
+                /* Основне фонове зображення */
+                url('pic.jpg') center / cover no-repeat;
+            
+            /* Фіксований фон при прокрутці */
+            background-attachment: scroll, scroll, fixed;
+        }
+        
+        .header-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            width: 80%;
+        }
+        
+        .header-content h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .header-content p {
+            margin: 15px 0 0;
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .card {
+            flex: 1;
+            min-width: 250px;
+            height: 200px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .card:nth-child(1) {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+        }
+        
+        .card:nth-child(2) {
+            background: radial-gradient(circle at top right, #667eea, #764ba2);
+        }
+        
+        .card:nth-child(3) {
+            background: conic-gradient(from 135deg, #8BC6EC 0%, #9599E2 50%, #8BC6EC 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1>Робота з багатошаровим фоном</h1>
+                <p>Використання градієнтів, патернів та зображень для створення складних фонових композицій</p>
+            </div>
+        </div>
+        
+        <div class="cards">
+            <div class="card">Лінійний градієнт</div>
+            <div class="card">Радіальний градієнт</div>
+            <div class="card">Конічний градієнт</div>
+        </div>
+    </div>
+</body>
+</html>

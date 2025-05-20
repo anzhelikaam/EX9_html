@@ -1,0 +1,8 @@
+.multiple-backgrounds {
+    background: 
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), /* напівпрозорий шар */
+        url('overlay-pattern.png'), /* патерн або текстура */
+        url('pic.jpg') center / cover; /* основне зображення */
+    
+    /* Шари накладаються згори вниз (перший шар найближчий до користувача) */
+}
